@@ -14,3 +14,17 @@ body{
     bottom: 0;
     left: 0; 
 }
+
+/* Removi os botões de dentro do input da pagina criarConta
+Motivo: porque ele type number. input para número de telefone
+*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
